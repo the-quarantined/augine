@@ -1,6 +1,6 @@
 # Amazon HackOn 2022
 
-#### _Team Quarantined_
+#### _Team Quarantined - The Augine_
 ###### • Daksh Gupta
 ###### • Piyush Gupta
 ###### • Kavya Rishi
@@ -9,7 +9,7 @@
 [![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=for-the-badge&logo=unity)](https://unity3d.com)
 
 # Creativity knows no bounds
-What we are building is a augmented-reality, Amazon products recommendation software, built over Unity supported by Jupyter notebooks wrapped in Django environment deployed to Amazon Linux Machine Image.
+The Augine is a augmented-reality, Amazon products recommendation software, built over Unity supported by Jupyter notebooks wrapped in Django environment deployed to Amazon Linux Machine Image for lightning fast data transfer and better user accessabilty.
 
 
 ## Features
@@ -24,9 +24,9 @@ What we are building is a augmented-reality, Amazon products recommendation soft
 ## Tech
 
 
-- [Django]() - Website
-- [Unity]() - AR
-- [Jupyter]() - ML
+- [Django](https://www.djangoproject.com/start/) - Website
+- [Unity](https://unity.com/learn/get-started) - AR
+- [Jupyter](https://docs.jupyter.org/en/latest/running.html) - ML
 
 
 
