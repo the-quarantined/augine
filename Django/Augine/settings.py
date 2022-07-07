@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Self Added Apps
-    'theAugine',
+    'Fashion',
+    'Furniture',
 ]
 
 MIDDLEWARE = [
