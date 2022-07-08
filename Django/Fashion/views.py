@@ -6,3 +6,9 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'home.html')
+
+
+def AddProduct(request):
+    if request.method == "POST":
+        print("hello")
+    return render(request, 'addProd.html')
