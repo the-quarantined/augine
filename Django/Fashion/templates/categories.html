@@ -2,10 +2,31 @@
 {% block title %}
     new title
 {% endblock title %}
+
+{% comment %} css styling goes here {% endcomment %}
+{% block style %}
+.button{
+    font-size: 20px;
+}
+{% endblock style %}
+
+{% comment %} HTML {% endcomment %}
 {% block body %}
-{% for cat in category %}
-    <p>{{cat}}</p>
-{% endfor %}
+
+<h1>Header</h1>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+<p class="button">T-Shirt</p>
+
 {% endblock body %}
+
+
+{% comment %} javscript goes here  {% endcomment %}
 {% block js %}
+console.log("Hello")
 {% endblock js %}
