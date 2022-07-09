@@ -2,7 +2,7 @@
 {% block title %}  Product {% endblock title %}
 {% block body %}
 Add your products here  
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3">
         <label for="name" class="form-label">Product Name</label>
@@ -11,6 +11,10 @@ Add your products here
       <div class="mb-3">
         <label for="price" class="form-label">Price</label>
         <input type="number" class="form-control" id="price" name='price'>
+      </div>
+      <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" class="form-control" id="category" name='category'>
       </div>
       <div class="mb-3">
           <label for="description" class="form-label">Description</label>
@@ -25,3 +29,9 @@ Add your products here
       <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock body %}
+
+{% block js %}
+
+
+
+{% endblock js %}
