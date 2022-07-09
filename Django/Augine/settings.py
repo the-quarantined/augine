@@ -130,3 +130,14 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AWS S3 settings
+AWS_ACCESS_KEY_ID = 'AKIAUTJR3FMTHKOZ7EEG'
+AWS_SECRET_ACCESS_KEY = 'YsgNFMZ8GMJsSRsTkgRh1BR5yWJoDlxMIT0AlX'
+AWS_STORAGE_BUCKET_NAME = 'augine-fashion-furniture'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_VERIFY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 

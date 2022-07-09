@@ -1,0 +1,7 @@
+db.sqlite3
+manage.py
+__pycache__
+*.csv
+settings.py
+*.zip
+*.crdownload
