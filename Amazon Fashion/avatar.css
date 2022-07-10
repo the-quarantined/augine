@@ -118,6 +118,19 @@ button a:hover{
 #section-3-top{
     flex-basis: 50%;
     background-color: #0a0a1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    text-transform: uppercase;  
+}
+
+.items{ 
+    flex-basis: 100%;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #section-3-bottom{  
