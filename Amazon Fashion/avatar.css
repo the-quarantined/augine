@@ -141,16 +141,23 @@ button a:hover{
     align-items: center;
 }
 
-#section-3-bottom button{
+.requirement{
+    display: flex;
+    align-items: center;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
     font-size: 2.5rem;
     color: #7376a3;
-    padding: 0 1rem;
+    padding: 0 1.3rem;
 }
 
 .requirement:hover{
-    transform: scale(1.21);  
+    transform: scale(1.15);  
     cursor: pointer;
+}
+
+.add_color{
+    fill: #00e8da;
+    transform: scale(1.25);
 }
