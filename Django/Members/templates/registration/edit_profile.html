@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block style %}
+#id_password{
+    display:none;
+}
+.helptext{
+    display:none;
+}
+{% endblock style %}
+
+
+{% block body %}
+
+<h1>Edit Profile</h1>
+
+{{user.profile.bio}}
+<br>
+<div class="form-group">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class= "btn btn-secondary">Update Profile</button>
+    </form>
+</div>
+
+{% endblock body %}

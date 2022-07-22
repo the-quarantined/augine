@@ -24,4 +24,6 @@ urlpatterns = [
     path('', include('Fashion.urls')),
     # connected the urls of our App
     path('furniture/', include('Furniture.urls')),
+    path('Members/', include('django.contrib.auth.urls')),
+    path('Members/', include('Members.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
