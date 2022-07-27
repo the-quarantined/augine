@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="tut.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="sec1">   
+        <div id="heading">
+            <div id="left-arrow">
+                <button><a href="http://"><i class="fa-solid fa-arrow-left"></i></a></button>
+                <!-- <button><i class="fa-solid fa-arrow-left"></i></button> -->
+            </div>
+            <div id="mid">
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                <span>Augine Fashion</span>
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                
+            </div>
+            <div id="creation">
+                <span>Enter Hub <button><a href="../Items_display/avatar.html" id="ba"><i class="fa-solid fa-arrow-right"></i></a></button></span>
+            </div>
+        </div>
+        <div>
+            <hr id="sep">
+            <div>
+                <hr id="sep2">
+            </div>
+        </div>
+    </section>
+    <section class="image">
+        <h1 class="txt">
+            Image Accessories Section
+        </h1>
+        <div class="column-left">
+            <div id="image-inside">
+                <div id="my_camera"></div>
+                <button id="btn">Button</button>
+                <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                 
+                <div id="results"></div>
+            </div>
+        </div>
+    </section>
+   
+   <!-- Webcam.min.js -->
+   
+   <!-- Configure a few settings and attach camera -->
+   <!-- <script type="text/javascript" src="webcamjs/webcam.min.js"></script -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+   <script>
+        let x = document.querySelector('#btn');
+        x.addEventListener('click',function(){
+            Webcam.set({
+                width: 640,
+                height: 320,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach( '#my_camera' );
+        })
+        function take_snapshot() {
+            Webcam.snap( function(data_uri) {
+                document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+            });
+        }
+    </script>
+</body>
+</html>
