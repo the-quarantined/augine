@@ -2,7 +2,7 @@ let icons = document.querySelectorAll(".requirement");
 console.log(Array.from(icons));
 Array.from(icons).forEach(element => {
     element.addEventListener("mouseenter",() => {
-        let music = new Audio("mixkit-plastic-bubble.wav");
+        let music = new Audio("../Assets/mixkit-plastic-bubble.wav");
         music.volume = 0.3;
         music.play();
     })
@@ -37,9 +37,8 @@ Array.from(products).forEach(element => {
         watch.classList.remove("add_color");
         cap.classList.remove("add_color");
         jewelry.classList.remove("add_color");
-
         element.classList.add("add_color");  
-        let music = new Audio("mixkit-typewriter-soft-click.wav");
+        let music = new Audio("../Assets/mixkit-typewriter-soft-click.wav");
         music.volume = 0.3;
         music.play();         
     })  

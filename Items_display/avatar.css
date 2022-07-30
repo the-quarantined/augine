@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;    
 }
 
 body{
@@ -12,13 +12,20 @@ body{
 /*--------------------------------------------Section-1 Start-------------------------------------------*/
 
 #sec1{
+    position: absolute;
+    top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 #heading{ 
     background-color:#2a2d44;
     height: 5rem;
-    display: flex;
+    width: 100%;
+    /* flex-basis: 100%;*/
+    display: flex;  
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -94,7 +101,7 @@ button a:hover{
     display: flex;
     flex-direction: column;
     white-space: nowrap;
-    width: 75%;
+    width: 100%;
     border: 3px solid #00e8da;
     top: 5rem;
 }
