@@ -1,37 +1,48 @@
 {% extends 'base.html' %}
 {% block title %}  Product {% endblock title %}
+{% block style %}
+
+.newClass{
+    color: red;
+}
+
+
+{% endblock style %}
 {% block body %}
 Add your products here  
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="mb-3">
-        <label for="name" class="form-label">Product Name</label>
-        <input type="text" class="form-control" id="name" name='prodname'>
-      </div>
-      <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input type="number" class="form-control" id="price" name='price'>
-      </div>
-      <div class="mb-3">
-          <label for="category" class="form-label">Category</label>
-          <input type="text" class="form-control" id="category" name='category'>
-      </div>
-      <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <input type="text" class="form-control" id="description" name='description'>
-      </div>
-      <div class="mb-3">
-          <label for="image" class="form-label">Image</label>
-          <input type="file" class="form-control" id="image" name= 'image'>
-      </div>
-      <br>
-      <br>
-      <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+
+
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 {% endblock body %}
 
 {% block js %}
-
-
-
 {% endblock js %}
+{% comment %} <div class="mb-3">
+    <label for="name" class="form-label">Product Name</label>
+    <input type="text" class="form-control" id="name" name='prodname'>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="number" class="form-control" id="price" name='price'>
+  </div>
+  <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input type="text" class="form-control" id="category" name='category'>
+  </div>
+  <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="description" name='description'>
+  </div>
+  <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="file" class="form-control" id="image" name= 'image'>
+  </div>
+  <br>
+  <br> {% endcomment %}
