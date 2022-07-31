@@ -2,15 +2,57 @@
 {% block title %}  Product {% endblock title %}
 {% block style %}
 
-.newClass{
-    color: red;
-}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color :aliceblue;
+    font-family: cursive;
+  }
 
+  body{
+      background-color: #111526;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
 
+  .form-group{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 1.2rem;
+      width: 45%;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 20px;
+  }
+
+  #heading{
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 2rem;
+      color: #00e8da;
+  }
+
+  .detail{
+      /* border: 2px solid red; */
+      margin : 1.6rem 0rem;
+      font-size: 1.1rem;
+  }
+
+  #btn{
+      display: flex;
+      justify-content: center;
+  }
+
+  #fil:hover{
+      cursor: pointer;
+  }
 {% endblock style %}
 {% block body %}
 Add your products here  
-
 
 
 <div class="form-group">

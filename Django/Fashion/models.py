@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100, default="prod")
+    name = models.CharField(max_length=100, default="")
     price = models.IntegerField()
-    category = models.CharField(max_length=127,default="else")
+    category = models.CharField(max_length=127, default="")
     desc = models.CharField(max_length=1023, default="")
     file = models.FileField(null=True, blank=True, upload_to="files/newFiles")
