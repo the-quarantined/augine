@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="index.css">    
+    <title>Augine Fashion</title>
+</head>
+<body>
+    <section id="sec1">   
+        <div id="heading">
+            <div id="left-arrow">
+                <!-- <button><a href="http://"><i class="fa-solid fa-arrow-left"></i></a></button> -->
+                <!-- <button><i class="fa-solid fa-arrow-left"></i></button> -->
+            </div>
+            <div id="mid">
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                <span>Augine Fashion</span>
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                
+            </div>
+            <div id="creation">
+                <span>Enter Hub <button><a href="../Amazon Fashion/Fashion.html" id="ba"><i class="fa-solid fa-arrow-right"></i></a></button></span>
+            </div>
+        </div>
+        <div>
+            <hr id="sep">
+            <div>
+                <hr id="sep2">
+            </div>
+        </div>
+    </section>
+    <section class="image">
+        <h1 class="txt">
+            Image Accessories Section
+        </h1>
+        <div class="column-left">
+            <div id="image-inside">
+                <div id="display">
+                    <p id="dis_in">Image Display</p>
+                </div>
+                <div id="snap" role="button" onClick="take_snapshot()">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <div class="choose-image">
+                    <button id="access"><p>Upload Image</p></button>
+                </div>
+                <div class="option">
+                    <div id="browse">
+                        <input type="file" accept="image/jpg , image/png" id="acc">
+                        <label for="acc">Browse</label>
+                    </div>
+                    <div id="camera">
+                        <button id="access"><p>Camera</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pw">
+        <div id="results" ></div>
+        <!-- <img id="preview" src="" alt="not loaded"> -->
+    </section>
+    <section id="forms_page">
+        <div id="form">
+            <form action="" method="get">
+                <input type="file" name="image" id="val" value="">
+                <button type="submit" id="access">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
