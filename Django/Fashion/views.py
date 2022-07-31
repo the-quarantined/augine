@@ -207,14 +207,18 @@ class AddProduct(CreateView):
     # return render(request, 'addProd.html')
 
 
-def showCategories(request):
+def showCategories(request, mssg):
+    print(mssg, "hello")
+    # we will have color recommended color
+    # with the help of the color i want to filter all the items present in our database to that corresponding color
+
     allProds = Product.objects.all()
     category = {}
     for prod in allProds:
         if prod.category in category:
             category[prod.category].append(prod.name)
         else:
-            print(type(prod.category))
+            # print(type(prod.category))
             category[prod.category] = []
             category[prod.category].append(prod.name)
     # print(type(category))

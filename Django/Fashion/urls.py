@@ -6,6 +6,6 @@ from .views import AddProduct, home, image, showCategories
 urlpatterns = [
     path('', home, name='home'),
     path('addProd/', AddProduct.as_view(), name='addProd'),
-    path('categories/', showCategories, name='categories'),
     path('image/', image, name='image'),
+    path('image/categories/<str:mssg>', showCategories, name='categories'),
 ]
