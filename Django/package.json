@@ -1,0 +1,12 @@
+{
+  "name": "Django",
+  "version": "1.0.0",
+  "description": "Install latest Version of Python\r Run the Following Command ----- $ python -m pip install Django\r Enter the Directory which contains manage.py file in Django project\r Run the Following Command ----- $ python manage.py runserver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

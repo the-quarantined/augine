@@ -222,4 +222,4 @@ def showCategories(request, mssg):
             category[prod.category] = []
             category[prod.category].append(prod.name)
     # print(type(category))
-    return render(request, 'categories.html', {'category': category})
+    return render(request, 'categories.html', {'allProds': allProds})
