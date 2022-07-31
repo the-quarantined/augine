@@ -1,0 +1,256 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.things::-webkit-scrollbar{
+    height: 1.5vh;    
+}
+
+.things::-webkit-scrollbar-thumb{
+    background-color: #333650;
+    border-radius: 2.4rem;
+}
+.things::-webkit-scrollbar-thumb:hover{
+    background-color: #333650;
+}
+
+.things::-webkit-scrollbar-track{
+    background-color: #111526;
+}
+
+body{
+    background-color: #111526;
+}
+
+/*--------------------------------------------Section-1 Start-------------------------------------------*/
+
+#sec1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#heading{ 
+    background-color:#2a2d44;
+    height: 5rem;
+    width: 100%;
+    /* flex-basis: 100%;*/
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left-arrow{
+    padding-left: 3.5rem;
+}
+#left-arrow button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 1.2rem;
+}
+button a{
+    text-decoration: none;
+    color: aliceblue;
+}
+button a:hover{
+    color: rgb(6, 6, 219);
+}
+
+#mid{
+    color: aliceblue;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+    font-size: 1.5rem;
+    font-family :'Times New Roman', Times, serif;
+    padding-left: 7.5rem;
+}
+#creation{
+    color: black;
+    text-transform: uppercase;
+    background-color: #00e8da;
+    padding: 0.6rem;
+    font-weight: bold; 
+    border-radius: 0.8rem;
+    margin-right: 3.5rem;
+    font-size: 1.2rem;
+    font-family: cursive;
+}
+#creation button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+}
+#ba{
+    color: #111526;
+}
+#ba:hover{
+    color: rgb(6, 6, 219);
+}
+#creation:hover{
+    cursor:pointer;
+    /* background-color: rgba(0,0, rgb(2, 112, 126)); */
+    background-color: rgb(37, 144, 159);
+}
+
+#creation button:hover{
+    cursor: pointer;
+}
+
+#sep{
+    border: 3px solid #4c5666;
+    display: flex;
+    overflow: hidden;
+}
+
+#sep2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    width: 100%;
+    border: 3px solid #00e8da;
+    top: 5rem;
+}
+
+/*---------------------------------------------Section-1 Over----------------------------------------------------*/
+
+/*---------------------------------------------Section-2 come here ----------------------------------------------*/
+
+#sec2{
+    width: 100%;
+    height: 26.5vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#display{
+    width: 18rem;
+    height: 20vmax;
+}
+
+/*---------------------------------------------Section-3 Start----------------------------------------------------*/
+
+#sec3{
+    height: 11rem;
+    width: 100%;    
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#section-3-top{
+    flex-basis: 50%;
+    background-color: #0a0a1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    text-transform: uppercase;
+}
+
+.items{ 
+    /* flex-basis: 100%; */
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.things{
+    height: 5rem;
+    display: flex;
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+.things > img{
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid #2a2d44;
+    margin-right: 5px;
+    background-color: #111526;
+}
+
+.things > img:hover{
+    cursor: pointer;
+}
+/*                  ITEMS  fOR FASHION               */
+
+#item-1{
+    display: none;
+}
+
+#item-2{
+    display : none;
+}
+#item-3{
+    display : none;
+}
+#item-4{
+    display : none;
+}
+#item-5{
+    display : none;
+}
+#item-6{
+    display : none;
+}
+#item-7{
+    display : none;
+}
+#item-8{
+    display : none;
+}
+#item-9{
+    display : none;
+}
+
+#item-10{
+    display : none;
+}
+
+#item-11{
+    display: none;
+}
+
+#section-3-bottom{  
+    flex-basis: 50%;
+    background-color: #2a2d44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.requirement{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 2.5rem;
+    color: #7376a3;
+    padding: 0 1.3rem;
+}
+
+.requirement:hover{
+    transform: scale(1.15);  
+    cursor: pointer;
+}
+
+.add_color{
+    fill: #00e8da;
+    transform: scale(1.25);
+}
