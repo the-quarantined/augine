@@ -264,6 +264,10 @@ button a:hover{
 
 
 {% block body %}
+
+{% comment %} <h1>{{newProds}}</h1> {% endcomment %}
+
+
 <section id="sec1">   
     <div id="heading">
         <div id="left-arrow">
@@ -294,11 +298,22 @@ button a:hover{
         <div class="items">
             <span id="text"> Available Items will be displayed here</span>
             <div class="things" id="item-1">
-                {% comment %} <img src="https://5.imimg.com/data5/YJ/BO/MY-10973479/mens-designer-casual-shirt-500x500.jpg" alt="">
-                <img src="https://5.imimg.com/data5/YJ/BO/MY-10973479/mens-designer-casual-shirt-500x500.jpg" alt="">
-                <img src="https://5.imimg.com/data5/YJ/BO/MY-10973479/mens-designer-casual-shirt-500x500.jpg" alt=""> {% endcomment %}
-                <img src="https://5.imimg.com/data5/YJ/BO/MY-10973479/mens-designer-casual-shirt-500x500.jpg" alt="">
-                {% for prod in allProds %}
+                 {% comment %} <img src="https://cdn02.plentymarkets.com/2aznzelve0iv/item/images/1247/full/ladies-damen-t-shirt-03-ea086-schwarz-logo-weiss.jpg" alt="">
+                <img src="https://www.psdmockups.com/wp-content/uploads/2017/10/Round-Neck-Front-T-Shirt-Brand-Collar-Tag-PSD-Mockup.jpg" alt=""> 
+                <img src="https://cdn.kingteeshops.com/image/2021/12/07/ebikes-fitness-bike-with-electric-bike-fast-cycling--classic-mens-t-shirt.jpg" alt=""> 
+                <img src="https://i5.walmartimages.com/asr/acebbc3f-966e-4a06-8aef-5ba98d4d2df6.1203cde2e5e33b5992286ddaf961820b.jpeg" alt=""> 
+                <img src="https://cdn.shopify.com/s/files/1/1195/1556/products/dna-mens-technical-t-shirt-492609_600x.jpg?v=1636345894" alt=""> 
+                <img src="https://m.media-amazon.com/images/I/71wvkvvkuwL._AC_UY550_.jpg" alt=""> 
+                <img src="https://m.media-amazon.com/images/I/61IGCQEI7FL._AC_UL320_.jpg" alt=""> 
+                <img src="https://the-collective.imgix.net/img/app/product/6/635224-6278442.JPG?w=206&auto=format" alt=""> 
+                <img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/388769/12397112_800.jpg" alt=""> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Kr_3LGXVlqg_mDcCkmaFeOmsf1lkvBDDYl-gE9lLj-wDn6u7X7kHZLb2HCH316IFcsE&usqp=CAU" alt=""> 
+                <img src="https://5.imimg.com/data5/IF/AU/MY-21836303/classic-black-shirt-long-sleeve-male-business-500x500.jpg" alt=""> 
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY5Nc7Y8VenbU7dd4JBNzzgcjvgSO9806Bp666z6LEiVT4zwLURCXmxHjdWLP3B8V5qFc&usqp=CAU" alt="">  {% endcomment %}
+                
+                {% comment %} HLLLPALdspak {% endcomment %}
+                {% for prod in newProds %}
+                {% comment %} <h1>{{prod.desc}}</h1> {% endcomment %}
                     {% comment %} <h2>{{prod.file}}</h2> {% endcomment %}
                     <img src="/media/{{prod.file}}" alt="">
                 {% endfor %}

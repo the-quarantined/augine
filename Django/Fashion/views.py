@@ -208,18 +208,51 @@ class AddProduct(CreateView):
 
 
 def showCategories(request, mssg):
-    print(mssg, "hello")
+    # print(mssg)
     # we will have color recommended color
     # with the help of the color i want to filter all the items present in our database to that corresponding color
+    # answer = ""
+    newProds = []
+    if(mssg != "Fashion.js"):
+        help = mssg.split('-')
+        # print(help, "the modified message is printed here ")
+        a = int(help[0])
+        b = int(help[1])
+        c = int(help[2])
+        help = rgb2hsv(a, b, c)
+        # print(help[0], help[1], help[2])
+        answer = find_color_name(help[0], help[1], help[2])
+        print(answer)
+        allProds = Product.objects.all()
+        for prod in allProds:
+            if prod.col == answer:
+                newProds.append(prod)
+                # print("yes")
+        print(newProds)
+    return render(request, 'categories.html', {'newProds': newProds})
 
-    allProds = Product.objects.all()
-    category = {}
-    for prod in allProds:
-        if prod.category in category:
-            category[prod.category].append(prod.name)
-        else:
-            # print(type(prod.category))
-            category[prod.category] = []
-            category[prod.category].append(prod.name)
+    # st = "hello"
+    # print(type(st))
+    # print(answer)
+    # newProds = Product.objects.filter(color=answer)
+    # print(newProds)
+    # print(allProds)
+    # if(allProds == newProds):
+    #     print("same")
+    # category = {}
+    # for prod in allProds:
+    #     if prod.category in category:
+    #         category[prod.category].append(prod.name)
+    #     else:
+    # print(type(prod.category))
+    # category[prod.category] = []
+    # category[prod.category].append(prod.name)
     # print(type(category))
-    return render(request, 'categories.html', {'allProds': allProds})
+    # t = prod.color
+    # print(type(t))
+    # temp = int(t)
+    # print(temp)
+    # newProd = []
+    # for prod in newProds:
+    #     print(prod.name)
+    #     newProd.append(prod.name)

@@ -291,6 +291,7 @@ label[for=acc]:hover{
 {% endblock style %}
 {% block title %}{% endblock title %}
 {% block body %}
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" id="i" alt="">
 <section id="sec1">   
     <div id="heading">
         <div id="left-arrow">
@@ -331,7 +332,7 @@ label[for=acc]:hover{
             </div>
             <div class="option">
                 <div id="browse">
-                    <input type="file" accept="image/jpg , image/png" id="acc">
+                    <input type="file" , image/png" id="acc">
                     <label for="acc">Browse</label>
                 </div>
                 <div id="camera">
@@ -345,14 +346,24 @@ label[for=acc]:hover{
     <div id="results" ></div>
     <!-- <img id="preview" src="" alt="not loaded"> -->
 </section>
+
+
+{% comment %} It is where my form is {% endcomment %}
+
 <section id="forms_page">
     <div id="form">
-        <form action="categories/{{1}}" method="get">
+        <form id="colorForm" action="" method="get">
             <input type="file" name="image" id="val" value="">
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </section>
+
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 {% endblock body %}
 {% block js %}
@@ -415,4 +426,81 @@ function take_snapshot() {
         console.log(extract);
     });
 }
+
+
+{% comment %} document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')'; {% endcomment %}
+{% comment %} this above line is useless {% endcomment %}
+
+{% comment %} new stuff here {% endcomment %}
+
+var rgb = getAverageRGB(document.getElementById('i'));
+console.log(rgb);
+
+var red = rgb.r;
+var blue = rgb.b;
+var green = rgb.g;
+{% comment %} 
+console.log(red)
+console.log(blue)
+console.log(green)  
+{% endcomment %}
+
+var href = red + '-' + blue + '-' + green;
+console.log(href, 'hello');
+
+document.getElementById('colorForm').setAttribute('action' ,"categories/"+red+"-"+green+"-"+blue); 
+{% comment %} document.getElementById('colorForm').setAttribute('action' ,"categories/{{" + href + "}}");  {% endcomment %}
+
+localStorage.setItem('rgb', [red,blue,green]);  
+function getAverageRGB(imgEl) {
+    
+var blockSize = 5, // only visit every 5 pixels
+    defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
+    canvas = document.createElement('canvas'),
+    context = canvas.getContext && canvas.getContext('2d'),
+    data, width, height,
+    i = -4,
+    length,
+    rgb = {r:0,g:0,b:0},
+    count = 0;
+    {% comment %} console.log("hello")  found here  {% endcomment %} 
+    
+if (!context) {
+    console.log("hello")
+    return defaultRGB;
+}
+{% comment %} console.log("hello") found here {% endcomment %}
+
+height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
+width = canvas.width =   imgEl.naturalWidth  || imgEl.offsetWidth  || imgEl.width;
+
+context.drawImage(imgEl, 0, 0);
+
+try {
+    data = context.getImageData(0, 0, width, height);
+} catch(e) {
+    {% comment %} /* security error, img on diff domain */alert('x'); {% endcomment %}
+    console.log("hello")
+    return defaultRGB;
+}
+
+length = data.data.length;
+
+while ( (i += blockSize * 4) < length ) {
+    ++count;
+    rgb.r += data.data[i];
+    rgb.g += data.data[i+1];
+    rgb.b += data.data[i+2];
+}
+
+// ~~ used to floor values
+rgb.r = ~~(rgb.r/count);
+rgb.g = ~~(rgb.g/count);
+rgb.b = ~~(rgb.b/count);
+
+console.log(rgb.r)
+console.log("hello")
+return rgb;
+}
+
 {% endblock js %}
