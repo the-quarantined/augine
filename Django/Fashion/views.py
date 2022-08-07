@@ -184,8 +184,9 @@ def exact_color(input_image, resize, tolerance, zoom):   # use this fuction to f
     return
 
 
-def home(request):
-    return render(request, 'home.html')
+def start(request):
+    # print("hello")
+    return render(request, 'start.html')
 
 
 class AddProduct(CreateView):

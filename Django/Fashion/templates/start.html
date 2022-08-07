@@ -1,0 +1,1186 @@
+{% extends 'base.html' %}
+{% block style %}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: cursive,sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1.75vh;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: #333650;;
+    border-radius: 2.4rem;
+    margin-right: 2rem;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: #333650;
+}
+
+html::-webkit-scrollbar-track{
+    background-color:#f9f9f9!important
+}
+
+/* scroll up btn styling */
+.scroll-up-btn {
+
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    background-color: #0266bff2;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 5px;
+    color: #fff;
+    z-index: 9999;
+    border-radius: 6px;
+    cursor:pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show{
+
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*------------------------------------------Navbar Styling start-------------------------------------------- */
+
+.stars{
+    margin: 0px;
+}
+
+.top{
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.first{
+    background-color: #1c2665;
+    display: flex;
+    height: 4.5rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content :space-around;
+    margin: auto;
+}
+.logo{
+    color: hsla(0,0%,100%,.82);
+    height: 4.5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.38rem;
+    font-weight: 700;
+    font-family: 'Jost', sans-serif;
+}
+
+.navbar{
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+.upper{
+    list-style: none;
+    padding : 0rem 2.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    flex-basis: auto;
+}
+
+.upper li{
+    display: inline-block;
+}
+.upper a{
+    text-decoration: none;
+    color: #f6f7fd;
+}
+
+.upper a:hover{
+    color: #9fcff9;
+}
+
+.menu-btn{
+    display: none;
+    color: #f6f7fd;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    width: 4rem;
+    margin-right: 2rem;
+}
+
+
+@media only screen and (max-width:1029px){
+    .logo{
+        font-size: 1.15rem;
+        width: 60%;
+    }
+    .menu-btn{
+        display: flex;
+    }
+    .navbar{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width:637px){
+    .logo{
+        width: 50rem;
+    }
+}
+
+/*------------------------------------------Home Styling start-------------------------------------------- */
+
+.name h1{
+    text-align: center;
+    font-size: 3.7rem;
+    font-weight: bold;
+    font-family: 'Permanent Marker', sans-serif;
+    padding-bottom: 1rem;
+}
+
+.home-parent{
+    height: 100%;
+}
+
+.home{
+    position: absolute;
+    top:4.5rem;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}    
+
+.home-inside{
+    color:#f9f9f9;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content :center;
+    align-items :stretch;
+    margin: auto 0 auto 7em;
+}    
+
+.text1 {
+    font-size: 1.7em;
+}
+
+.text2 {
+    font-size: 3.5em;
+    font-weight: 600;
+    color: #9fcff9f2;
+}   
+
+.text3 {
+    font-size: 2em;
+}
+
+.text3 span{
+    color: #9fcff9;
+    font-weight: 500;
+}
+
+.home .home-inside a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 4rem;
+    background: #0f7bda99;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    border-radius: 5px;
+    border: 2px solid #0f7bda99;
+    transition: all 0.3s ease;
+}
+
+.home .home-inside a:hover{
+    background: rgba(0,0,0, 0);
+    color: rgb(8, 111, 214);
+}
+
+@media only screen and (max-width : 890px){
+    .text1{
+        font-size: 1.2rem;
+    }
+    .text2{
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .text3{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .home{
+        justify-content: center;
+    }
+    .home-inside{
+        margin-left: 0rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*------------------------------------------About us Styling start--------------------------------------------*/
+
+.about, .services, .skills,.contact, footer{
+    font-family: 'Jost', sans-serif;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 99.1vw;
+    padding: 80px 0;
+}
+
+.about-content{
+    display: flex;
+    width: 99.1vw;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.about-idx,.services-idx{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about-idx .title {
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 160px; /* Changed this one*/
+    margin-top: 100px;  /* Changed this one*/
+    padding-bottom: 20px;
+    font-family: cursive;
+    color: #0266bff2;
+}
+
+.about-idx .title::before {
+    
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 180px;
+    background :#1c2665;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.about-idx .title::after {
+    
+    position: absolute;
+    content: "who are we";
+    font-size: 22px;
+    background: #fff;
+    color :#1c2665;
+    padding: 5px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.column-left {
+    flex-basis: 30%;
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+
+.column-left img {
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.column-right {
+    flex-basis: 50%;
+    margin-right: 5rem;
+    margin-left: 2rem;
+}
+
+.column-right .text {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.column-right .text span {
+    color: #035eadf2;
+}
+
+.column-right p {
+    
+    text-align: justify;
+    font-size: 20px;
+    line-height: 35px; /* Changed this one*/
+}
+
+.column-right a {
+    display: inline-block;
+    background: #035eadf2;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: 2px solid #035eadf2;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.column-right a:hover{
+    background: none;
+    color: #035eadf2;
+}
+
+@media only screen and (max-width : 1158px){
+    .about-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .column-left{
+        margin-left: 2rem;
+    }
+    .column-right{
+        margin : 2.5rem 2rem 0rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .text{
+        text-align: center;
+    }
+}
+
+/*------------------------------------------Services Styling start--------------------------------------------*/
+
+.services{
+    margin-top: 10rem;
+    width: 99.3vw;
+    background-color: #222e79;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.services-idx .title {
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 160px; /* Changed this one*/
+    margin-top: 100px;  /* Changed this one*/
+    padding-bottom: 20px;
+    font-family: cursive;
+    color :#f6f7fd;
+}
+
+.services-idx .title::before {
+    
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 240px;
+    background: #f6f7fd;
+    bottom: 0px;
+    left: 50%;
+    top: 4.6rem;
+    transform: translateX(-50%);
+    
+}
+
+.services-idx .title::after {
+    
+    position: absolute;
+    content: "what we provide";
+    font-size: 22px;
+    padding: 5px;
+    color :#f6f7fd;
+    background: #222e79;
+    bottom: -12px;
+    top: 3.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.serv-content{
+    display: flex;
+    width: 99.1vw;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+.services .serv-content .card {
+    
+    flex-basis: 30rem;
+    height: 34.5rem;
+    font-size: 1.5rem;
+    background  :#f9f9f9;
+    text-align: center;
+    border-radius: 6px;
+    padding: 30px 35px;
+    margin-bottom: 10rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+@media only screen and (max-width:855px){   
+    .services .serv-content .card{
+        flex-basis: 80%;
+    }
+}
+
+.services .serv-content .card .box {
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;    
+}
+
+
+.services .serv-content .card .text {
+    
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 10px 0 10px;
+    color :#1c2665;
+}
+
+.services .serv-content .card p{
+    color :#1c2665;
+    font-size: 1.1rem;
+} 
+
+.items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 1.2rem;
+    color: #1c2665;
+    font-size: 1.05rem;
+}
+
+.services .tech-stack .heading {
+    color : #055193f2;
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover .box{
+    
+    transform: scale(1.05);
+}
+
+.services .serv-content .card:hover{
+    
+    background: #0266bff2;
+}
+
+.services .serv-content .card i{
+    color : #0266bff2;
+    font-size: 50px;
+}
+
+.services .serv-content .card:hover i{
+    color:#fff;
+}
+
+.services .serv-content .card:hover .heading{
+    color : #e1dfdf;
+    font-size: 1.42rem;
+}
+.services .serv-content .card:hover p{
+    color :#f9f9f9;
+}
+.services .serv-content .card:hover .text{
+    color: #fff;
+    font-size: 1.7rem;
+}
+.services .serv-content .card:hover .items li{  
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.services .web {
+    padding-top: 2.5rem;
+}
+
+.services .graphic {
+    padding-top: 50px;
+}
+
+.services .machine {
+    padding-top: 70px;
+}
+
+/*------------------------------------------Contact Styling start--------------------------------------------*/
+
+/* Contact section styling */
+.contact{
+    margin-top: 10rem;
+    width: 99.3vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-idx .title {
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 160px; /* Changed this one*/
+    margin-top: 100px;  /* Changed this one*/
+    padding-bottom: 20px;
+    font-family: cursive;
+    color: #0266bff2;
+}
+
+.contact-idx .title::before {
+    
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 240px;
+    background :#1c2665;
+    bottom: 0px;
+    left: 50%;
+    top: 4.6rem;
+    transform: translateX(-50%);
+    
+}
+
+.contact-idx .title::after {
+    
+    position: absolute;
+    content: "connect with us";
+    font-size: 22px;
+    padding: 5px;
+    background: #fff;
+    color :#1c2665;
+    bottom: -12px;
+    top: 3.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-content{
+    margin-top: -5rem;   
+    display: flex;
+    flex-direction: column;
+    width: 99.1vw;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#contact-top{
+    /* border: 2px solid darkblue; */
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-content .column{
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    padding-left: 3rem;
+}
+
+#contact-top a {
+    display: inline-block;
+    background: #035eadf2;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: 2px solid #035eadf2;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+#contact-top a:hover{
+    background: none;
+    color: #035eadf2;
+}
+
+#contact-top p{
+    text-align: center;
+}
+
+.contact .contact-content .text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color :#0266bff2;
+} 
+.contact .contact-content .left .text {
+    
+    margin-top: 50px;
+}
+
+.contact .contact-content .left p {
+    
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.contact .contact-content .left .icons {
+    
+    margin: 10px 0;
+    
+}
+
+.contact .contact-content .left .row {
+    
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .left .row .info {
+    margin-top: -45px;
+    margin-left: 40px;
+    /* border: 2px solid forestgreen; */
+}
+
+.contact .contact-content .left .row i{
+
+    font-size: 25px;
+    color: #0266bff2;
+    justify-self:self-start;
+    
+}
+
+.contact .contact-content .row .info .head {
+    
+    font-weight: 500;
+}
+
+.contact .contact-content .row .info .sub-title {
+    
+    color: #333;
+}
+
+/*------------------------------------------footer Styling start--------------------------------------------*/
+
+
+footer{
+    background-color :#1c2665;
+    color: #fff;
+    margin-top: 6rem;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-made{
+    margin-top: 4rem;
+}
+
+footer div .text {
+    color :#9fcff9;
+}
+
+footer .year {
+    margin-bottom: 40px;
+}
+
+/*                                              End CSS                                    */
+
+{% endblock style %}
+{% block body %}
+
+    <!------------------------------------------ NAVBAR START------------------------------------------------>
+    
+    <div class="scroll-up-btn">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <nav class="top">
+        <div class="first">
+
+            <div class="logo">
+                Augine-The Future
+            </div>
+
+            <ul class="navbar">
+                <li class="upper"><a href="#home-start">Home</a></li>
+                <li class="upper"><a href="#about">About</a></li>
+                <li class="upper"><a href="#services">Services</a></li>
+                <!-- <li class="upper"><a href="#skills">Skills</a></li> -->
+                <li class="upper"><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!------------------------------------------- NAVBAR END-------------------------------------------------->
+
+    <!------------------------------------------- HOME START -------------------------------------------------->
+
+    <div class="home-parent" id="home-start">
+        <canvas id="stars"></canvas>
+        <div class="home">
+            <div class="home-inside">
+                <div class="text1">Hello, we are</div>
+                <div class="text2">The Augine</div>
+                <div class="text3">And We provide you shopping experience using <span class="typing"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------------- HOME END -------------------------------------------------->
+
+    <!-- About section Implementation -->
+    <section class="about" id="about">
+        
+        <div class="about-idx">
+            <h2 class="title">About Us</h2>
+            <div class="about-content">
+                <div class="column-left">
+                    <img src="Assets/icon.png" alt="">
+                </div>
+                <div class="column-right">
+                    <div class="text">We are Augines and We are <span>The Future</span></div>
+                    <p>We the Augines, have built such a platform where any customer or retailer can revel the
+                        shopping experience anytime and anywhere in the world. Our Team has tried its best to provide you the feature of Virtual try-On where you can choose whatever suits on you or in your house.Our site includes both Amazon Fashion and Amazon Furniture Products.
+                        Our Fashion's feature basically gives you a live virtual experience of the clothes or any accessories on your body and the Furniture Feature gives you a live demo of various household products with colour and dimensions.
+                    </p>
+                    <a href="Assets/Our Report.pdf" download="Augine_Paper">Download Paper</a>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- Services section Implementation -->
+    <section class="services" id="services">
+        <div class="services-idx">
+            <h2 class="title">Our Services</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <div class="text">Augine Fashion</div>
+                        <p>Amazon Fashion provides user a 3D Virtual try-on feature using Machine Learning and Neural Networks furnishing a good shopping experience</p>
+                        
+                        <div class="tech-stack web">
+                            <div class="heading">Tech Stack :</div>
+                            <ul class="items" style="list-style-type: none;">
+                                <li>HTML/CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>Pytorch</li>
+                                <li>Neural Networks</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="box">
+                        
+                        <i class="fa-solid fa-couch"></i>
+                        <div class="text">Augine Furniture</div>
+                        <p>Augine Furniture provides user a virtual experience of Furniture Products with the help of AR technology</p>
+                        
+                        <div class="tech-stack graphic">
+                            <div class="heading">Tech Stack :</div>
+                            <ul class="items" style="list-style-type: none;">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Vuforia</li>
+                                <li>Augmented Reality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section Implementation -->
+    
+    <section class="contact" id="contact">
+        <div class="contact-idx">
+
+            <h2 class="title">Contact us</h2>
+
+            <div class="contact-content">
+                <div id="contact-top">
+                    <div class="text">Get in touch</div>
+                    <p>Connect with our Augine Team Members regarding any information about our project's Report and Code </p>
+                    <a href="https://github.com/the-quarantined/augine" target="_blank">Code</a>
+                </div>
+
+                <div class="column left">
+                    <div class="icons">
+
+                        <div class="row">
+
+                            <i class="fas fa-user"></i>
+
+                            <div class="info">
+
+                                <div class="head">Name</div>
+                                <div class="sub-title">Nikhilesh Vardhan Gupta</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                            <div class="info">
+
+                                <div class="head">Address</div>
+                                <div class="sub-title">Panchkula, India</div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <div class="info">
+
+                                <div class="head">Email</div>
+                                <div class="sub-title">nikhileshgupta0312@gmail.com</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icons">
+
+                        <div class="row">
+
+                            <i class="fas fa-user"></i>
+
+                            <div class="info">
+
+                                <div class="head">Name</div>
+                                <div class="sub-title">Daksh Gupta</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                            <div class="info">
+
+                                <div class="head">Address</div>
+                                <div class="sub-title">Panchkula, India</div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <div class="info">
+
+                                <div class="head">Email</div>
+                                <div class="sub-title">dakshgupta2002@gmail.com</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icons">
+
+                        <div class="row">
+
+                            <i class="fas fa-user"></i>
+
+                            <div class="info">
+
+                                <div class="head">Name</div>
+                                <div class="sub-title">Piyush Bansal</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                            <div class="info">
+
+                                <div class="head">Address</div>
+                                <div class="sub-title">ManiMajra, India</div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <div class="info">
+
+                                <div class="head">Email</div>
+                                <div class="sub-title">piyushb544@gmail.com</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icons">
+
+                        <div class="row">
+
+                            <i class="fas fa-user"></i>
+
+                            <div class="info">
+
+                                <div class="head">Name</div>
+                                <div class="sub-title">Kavya Rishi</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                            <div class="info">
+
+                                <div class="head">Address</div>
+                                <div class="sub-title">Uttrakhand, India</div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <div class="info">
+
+                                <div class="head">Email</div>
+                                <div class="sub-title">forcodingpurposes19@gmail.com</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+        <div class="footer-content">
+
+            <div id="footer-made">Created by <span class="text">Augine Team With Love</span> </div>
+
+            <div class="year">
+                <span class="far fa-copyright"></span> <script>document.write(new Date().getFullYear())</script> All rights reserved.
+            </div>
+
+        </div>
+
+    </footer>
+{% endblock body %}
+{% block js %}
+let options = {
+    strings: ['Machine Learning', 'Deep Learning' ,'Augmented Reality','Computer Vision'],
+    typeSpeed: 100,
+    backSpeed: 80,
+    loop : true,
+}
+let typed  = new Typed('.typing',options);
+
+
+function lines(){
+    let x = document.querySelector('.home');
+    let i=0;    
+    let count = 50;
+    while(i<count){
+        let shinning = document.createElement('i');
+        shinning.id = 'lines';
+        let w= Math.floor(Math.random()*window.innerWidth);
+        let h = Math.floor(Math.random()*100);
+        let duration = Math.random()*1;
+
+        shinning.style.left= w + 'px';
+        shinning.style.width = 1 + 'px';
+        shinning.style.height= h + 'px';
+        shinning.style.animationDuration = duration + 's';
+
+        x.appendChild(shinning);
+        i++;
+    }
+}
+$(window).scroll( function(){
+
+    if(this.scrollY > 20){
+
+        $(".navbar").addClass("sticky");
+    }
+    else{
+
+        $('.navbar').removeClass("sticky");
+    }
+
+    if(this.scrollY > 500){
+
+        $('.scroll-up-btn').addClass('show');
+    }
+    else{
+        $('.scroll-up-btn').removeClass('show');
+    }
+});
+
+$('.scroll-up-btn').click(function(){
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+})
+
+
+const canvas = document.getElementById("stars");
+const ctx =  canvas.getContext("2d");   
+var screen;
+
+var params = {speed : 10 , count : 350 ,life :5};
+var starArr;
+
+setup();
+update();
+window.onresize = function(){
+    setup();
+}
+
+function Star(){
+    this.x = Math.random()* canvas.width;
+    this.y = Math.random()* canvas.height;
+    this.z = Math.random()* canvas.width;
+    
+    this.move  = function(){
+        this.z -= params.speed;
+        if(this.z<=0){
+            this.z = canvas.width;
+        }
+    }
+    
+    this.show = function(){
+        let x,y,radius,opacity;
+        radius = canvas.width/this.z;
+        x = (this.x - screen.c[0]) * radius;
+        x = x + screen.c[0]; 
+        y = (this.y - screen.c[1]) * radius;
+        y = y + screen.c[1];
+        
+        opacity =radius > params.life ? (2 - radius/params.life)*1.5 : 1;
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(255,255,255,"+opacity+")";
+        ctx.arc(x,y,radius,0,Math.PI*2);
+        ctx.fill(); 
+    }
+}
+function setup(){
+    screen = {
+        w : window.innerWidth-9.5,
+        h : window.innerHeight,
+        c : [window.outerWidth*0.5,window.outerHeight*0.5],
+    }
+    window.cancelAnimationFrame(update);
+    canvas.width = screen.w;
+    canvas.height = screen.h;
+
+    starArr=[];
+    for(var i=0;i<params.count;i++){
+        starArr[i] = new Star();
+    }
+}
+
+function update(){
+    ctx.fillStyle = '#222e79';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    starArr.forEach(function(s) {
+        s.show();
+        s.move();  
+    });
+    
+    window.requestAnimationFrame(update);
+}
+
+
+{% endblock js %}
