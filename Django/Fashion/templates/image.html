@@ -278,7 +278,7 @@ label[for=acc]:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4d90fe;
+    background-color: #111526;
     width: 100%;
     height: 10rem;
 }
@@ -291,7 +291,7 @@ label[for=acc]:hover{
 {% endblock style %}
 {% block title %}{% endblock title %}
 {% block body %}
-<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" id="i" alt="">
+{% comment %} <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" id="i" alt=""> {% endcomment %}
 <section id="sec1">   
     <div id="heading">
         <div id="left-arrow">
@@ -343,12 +343,19 @@ label[for=acc]:hover{
     </div>
 </section>
 <section class="pw">
-    <div id="results" ></div>
-    <!-- <img id="preview" src="" alt="not loaded"> -->
+    <div id="results" >
+        {% comment %} needed {% endcomment %}
+    </div>
+    {% comment %} <!-- <img id="preview" src="" alt="not loaded"> --> {% endcomment %}
 </section>
 
+{% comment %} <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" id="i" alt=""> {% endcomment %}
 
 {% comment %} It is where my form is {% endcomment %}
+
+<canvas id="canva"></canvas>
+
+
 
 <section id="forms_page">
     <div id="form">
@@ -359,7 +366,7 @@ label[for=acc]:hover{
     </div>
 </section>
 
-
+{% comment %} <button onclick="convertCanvasToImage()"> TAB </button> {% endcomment %}
 
 
 
@@ -367,6 +374,7 @@ label[for=acc]:hover{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 {% endblock body %}
 {% block js %}
+let removeBG = document.createElement('img');
 let access = document.querySelector('.choose-image');
 let visible= document.querySelector('.option');
 access.addEventListener('click',()=>{
@@ -377,15 +385,22 @@ access.addEventListener('click',()=>{
 })
 
 const img_input = document.querySelector('#acc');
+{% comment %} console.log(img_input); {% endcomment %}
 let dis = document.querySelector('#dis_in');
 var uploaded_image= "";
 
 img_input.addEventListener("change",function(){
     const reader = new FileReader();
-    let x=1;
+    {% comment %} let x=1; {% endcomment %}
     reader.addEventListener("load",()=>{
+        {% comment %} console.log(reader) {% endcomment %}
         uploaded_image= reader.result;
+        {% comment %} console.log(uploaded_image) {% endcomment %}
         document.querySelector("#display").style.backgroundImage = `url(${uploaded_image})`;
+        removeBG.setAttribute("src", uploaded_image);  
+        imageSegment(removeBG)
+        {% comment %} console.log("HERE") {% endcomment %}
+        {% comment %} document.querySelector("").innerHTML = '<img src="'+uploaded_image.getAttribute('src') +'"/>'; {% endcomment %}
         dis.style.visibility='hidden';
         sessionStorage.setItem("recent-image",uploaded_image);
     })
@@ -420,8 +435,9 @@ cam.addEventListener('click',function(){
 })
 function take_snapshot() {
     Webcam.snap( function(data_uri) {
+        {% comment %} this data_uri is basically the source of the image we captured {% endcomment %}
         snapshot.innerHTML = '<img src="'+data_uri+'"/>';
-        sessionStorage.setItem("snap-photo",snapshot.innerHTML);
+        sessionStorage.setItem("snap-photo",data_uri);
         extract.setAttribute('value',snapshot.innerHTML);
         console.log(extract);
     });
@@ -432,13 +448,19 @@ function take_snapshot() {
 {% comment %} this above line is useless {% endcomment %}
 
 {% comment %} new stuff here {% endcomment %}
-
-var rgb = getAverageRGB(document.getElementById('i'));
+const i = sessionStorage.getItem('snap-photo')
+const img = document.createElement('img');
+img.src = i; 
+{% comment %} var rgb = getAverageRGB(document.getElementById('i')); {% endcomment %}
+var rgb = getAverageRGB(img);
 console.log(rgb);
 
 var red = rgb.r;
 var blue = rgb.b;
-var green = rgb.g;
+var green = rgb.g; 
+{% comment %} var red = 0;
+var blue = 0;
+var green = 0; {% endcomment %}
 {% comment %} 
 console.log(red)
 console.log(blue)
@@ -478,6 +500,8 @@ context.drawImage(imgEl, 0, 0);
 
 try {
     data = context.getImageData(0, 0, width, height);
+    {% comment %} console.log("data here is ");
+    console.log("data here is " , data); {% endcomment %}
 } catch(e) {
     {% comment %} /* security error, img on diff domain */alert('x'); {% endcomment %}
     console.log("hello")
@@ -501,6 +525,80 @@ rgb.b = ~~(rgb.b/count);
 console.log(rgb.r)
 console.log("hello")
 return rgb;
+}
+
+
+
+
+{% comment %} this is new section for image piercing {% endcomment %}
+const imageSegment = (data) =>{
+
+
+    IMAGE_SRC = `${data}`
+      
+    const loadImage = () => {
+      const img = new Image()
+      img.src = IMAGE_SRC
+
+      const canvas = document.querySelector('canvas')
+      // console.log(canvas);
+      const ctx = canvas.getContext('2d')
+
+      img.addEventListener('load', () => {
+        canvas.width = img.width
+        canvas.height = img.height
+        ctx.drawImage(img, 0, 0)
+        // console.log(ctx);
+        backgroundRemoval()
+        // sessionStorage.setItem('canvaImg' , )
+      })
+    }
+
+    const backgroundRemoval = async () => {
+        {% comment %} console.log("HELLO") {% endcomment %}
+      const canvas = document.querySelector('canvas')
+
+      const net = await bodyPix.load({
+        architecture: 'ResNet50',
+        outputStride: 32,
+        quantBytes: 4
+      })
+      const segmentation = await net.segmentPerson(canvas, {
+        internalResolution: 'medium',
+        segmentationThreshold: 0.7,
+        scoreTreshold: 0.7
+      })
+
+      const ctx = canvas.getContext('2d')
+      // console.log(ctx);
+      const {
+        data: imgData
+      } = ctx.getImageData(0, 0, canvas.width, canvas.height)
+
+      const newImg = ctx.createImageData(canvas.width, canvas.height)
+      const newImgData = newImg.data
+
+      segmentation.data.forEach((segment, i) => {
+        if (segment == 1) {
+          newImgData[i * 4] = imgData[i * 4]
+          newImgData[i * 4 + 1] = imgData[i * 4 + 1]
+          newImgData[i * 4 + 2] = imgData[i * 4 + 2]
+          newImgData[i * 4 + 3] = imgData[i * 4 + 3]
+        }
+      })
+      ctx.putImageData(newImg, 0, 0)
+    convertCanvasToImage();
+    }
+// console.log('Hello');
+    loadImage()
+
+  function convertCanvasToImage() {
+    let canvas = document.getElementById("canva");
+    let image = new Image();
+    image.src = canvas.toDataURL();
+    console.log(image.src)
+    return image;
+  }
 }
 
 {% endblock js %}

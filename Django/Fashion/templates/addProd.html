@@ -56,7 +56,7 @@ Add your products here
 
 
 <div class="form-group">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" action="/" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit" class="btn btn-primary">Submit</button>
