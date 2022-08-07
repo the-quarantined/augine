@@ -1,5 +1,5 @@
 let options = {
-    strings: ['Machine Learning', 'Neural Networks' ,'Augmented Reality','Computer Vision'],
+    strings: ['Machine Learning', 'Deep Learning' ,'Augmented Reality','Computer Vision'],
     typeSpeed: 100,
     backSpeed: 80,
     loop : true,
