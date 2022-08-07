@@ -26,6 +26,36 @@ html::-webkit-scrollbar-track{
     background-color:#f9f9f9!important
 }
 
+/* scroll up btn styling */
+.scroll-up-btn {
+
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    background-color: #0266bff2;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 5px;
+    color: #fff;
+    z-index: 9999;
+    border-radius: 6px;
+    cursor:pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show{
+
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*------------------------------------------Navbar Styling start-------------------------------------------- */
+
 .stars{
     margin: 0px;
 }
